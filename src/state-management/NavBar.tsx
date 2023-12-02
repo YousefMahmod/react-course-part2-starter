@@ -1,10 +1,10 @@
 import LoginStatus from "./auth/LoginStatus";
-import useAuth from "./auth/useAuth";
+import useAuthStore from "./auth/store";
 import useTasks from "./hooks/useTasks";
 
 const NavBar = () => {
   const { tasks } = useTasks();
-  const { user } = useAuth();
+  const { user } = useAuthStore();
   return (
     <nav className="navbar d-flex justify-content-between">
       {user && <span className="badge text-bg-secondary">{tasks.length}</span>}

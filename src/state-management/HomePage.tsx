@@ -1,8 +1,8 @@
 import TaskList from "./TaskList";
-import useAuth from "./auth/useAuth";
+import useAuthStore from "./auth/store";
 
 const HomePage = () => {
-  const { user } = useAuth();
+  const { user } = useAuthStore();
   if (!user) return null;
   return <TaskList />;
 };
